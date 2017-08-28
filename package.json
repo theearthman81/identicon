@@ -1,0 +1,17 @@
+{
+  "name": "identicon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "express": "^4.15.4",
+    "npmlog": "^4.1.2",
+    "ramda": "^0.24.1"
+  }
+}
