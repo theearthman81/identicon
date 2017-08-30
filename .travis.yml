@@ -1,0 +1,13 @@
+install:
+- npm install
+
+script:
+- npm run test
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: IsWlqAGMNN0SdSjMktLzxD87Oz18dX7jPOmvUTvDcziGEJ1ltZR4JC9u6I+A7SKwyVfjMbRHYw9y/nb0TdoXs4BeS+qPaGBI1aS8S9i7xgA8dZR2KeP6/NuDfecYAcQb3l7lI7TUvoR65qp5bi660ls5/APMinpBhRJ8Kj2dk5B3R2PXFuFs9P28bcy0Ow8NsreBEp8KHybcgHP1PUSkwIbL16GlD6C1CWysQc4kaqtvdYNW6+mAi1BV15VhI5FPFcpsA4iJ71NMdB5H6/CLQwksoD1tWMxhsmq1jVh/Z9OxymaZXAJ38/C4phNXXf8E1bCfrFpNpkuOeGx4rbVsdv/mHBx/6FaoHnhgweVpSQJ5A3dOLu80ZyGOBbnhGoxccp6A/Z5DwFSCNIW9tzJ4uBelG9EHFkougJ7jTJABCWElAFLbRUpDDgkKO6AFd4eUuITtiT3vTEYPhcg4FtHv2rBM5g/xns4kcx3mAKuQIODzssCT9/cPW0l8cHfiVutSoJP1aIc4ltZyPUWez926NbA4bvIc2U9KXVoN/s5ZeAYBbEN3Kn3Y6hqlDr5My9uGO5F6I/s67j04G0eMAr4WCkqroQwo9EhWQfOvuB83+CrmA0TAER0Pdj1cETaUWyXkotY6v/8t4liJY9JOhh+l2eL6D7Vg/7pFqJJSglyPWNA=
+  app: identicon
+  on:
+    repo: jimenglish81/identicon
