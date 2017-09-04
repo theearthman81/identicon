@@ -1,3 +1,3 @@
-# Nodejs Identicon
+# Identicon
 
-md5 based identicon built with ramdajs.
+Node identicon built with ramdajs and based on md5 hash.
