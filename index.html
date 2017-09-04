@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Identicon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://unpkg.com/@reactivex/rxjs@5.0.3/dist/global/Rx.js"></script>
+  <style type="text/css">
+  body {
+    background: #efefef;
+  }
+  .header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .header input {
+    background: transparent;
+    border: 1px solid #333;
+    color: #333;
+    outline: none;
+    padding: 8px;
+    text-align: center;
+    width: 250px;
+  }
+  .header input:focus {
+    outline: none;
+  }
+  .preview {
+    display: flex;
+    justify-content: center;
+  }
+  .github {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0I\
+      Ars4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6\
+      eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwO\
+      i8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdX\
+      Q9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGl\
+      mZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGP\
+      go8L3g6eG1wbWV0YT4KTMInWQAAB5RJREFUaAXtWF1oHFUU3vnJZLuJtSZkt4lRAxZLqbQlrWAf/ClapSC+KRSxgihi0dKWRh9\
+      8qPggYkVQihWEiih9sPqmUloVEURKW5pSA9aithKy2dma2Jikye7MXL/vzr3bTZzszG5TfdkDd+69557/c+7PbirVhGYEmhFoR\
+      qAZgf8hAsZ11jlfvrhe+uYrulY9lGcqIQH6+YbrdfZ+xLpirb9bLEcox0Lzqk3o6enJmKaZJi4IgpmRkZHp6nWMbbRFcWgxHKE\
+      x0oGOjo6lrba9GanYDMFrge9By6AR6EQeKRo0hPh61vOOjY+PX5YroUNzgqDwibtrcYS8LCO/t7e3wy+X9wghnjYMI4eWwlgao\
+      XviCHoNeBfjg1ZLy77h4eExLDGjUeVItlho1BE6QKWp7mz2CZj8DkqoE+VDFCNLLyhbNwwljvjQw1SqBTwsuT9BtDPvup+QCFC\
+      RHU6TfRtxpKJoeTb7HqL6vIp6CSpZZkll0iE67agsHRh13e2YEyo6wmn8N6lSLYn0MqLLc7lPTcN4zA+CMpB0gHhuXJYIDdGR1\
+      73WpWXQCdIaIPAs02wJhDg8Wig8DhxB04WzmC8F1QOkF8wEyuIplMUstDnA+YgqbDEtZIcGMDsEOsRGHIGO0gEbQbDkhiEvygx\
+      8s+Bf05bJZCenpr4CjdSFPhFQSVJg1H3uCZaTcqIVuIIwjH4U+73AfURhMIjlosuMhrMBZdhcIw0MPyR8f5PkhQw40wr+Emi25\
+      3K5rSCh05SRCHSk4ohJJ3g6eaXSLxh3os1CaSsMOoLa3qIFZLPZjZZhPCqC4FTKsi6anjfBtcC2l6Z8/zbDNNfj+P1ixHV/0Dz\
+      I8BHIephZAY7BKc6USnf8BcBY6ta0C/VJPWaaPRyxA4goTyeWjqmiME7hq1evdoaGhnzXdX/ElC0KTgD5mVqwwGOBpwQ5Y8paV\
+      kgJOrrSjrML471oUrfiWbBTtiy4zgWpg5edY9vMRg6N52zAUkGNnMHRuQ5zAmmr9wQ3evVm1/qIq9wZKNdBFN5aZESXIPfasGn\
+      bK9VrQNoAngUhyR6RNI5lPQTD6QSVEScNxOe8kq6V6Q1NOo6l02pMnMaTXzs2hDGBODrhQVdvUC7fTyQg1s5YglAONBjGgxBOT\
+      VRG4+RJY1jWHkWTWJaWiV46Am93w/i/KRMtoA7qQpY2KVrtsJr+u0uinEZTI1PPnkJ53EKdOJrP5y9izjpm9OsFyrawrwroj+F\
+      IJj+PY5wHghFbQwRA2hAOo79xjlCy4CsWfY8SIZXQEZxAuiSkBdEqYrGSF/LOIQMy3eAIcXgBqTEdqakjzhFpBZQswaCNUZICw\
+      8jxLihLgkX4QBb3DrNcLS2Dk43lFguJHKkhpUOtzdFegz5qSfOGslSQFKGP41mvR/FWcIkcQbSugGNK7gtuRFXDwK1SkhIpq2i\
+      dO5C8kLmSGVf1E8ozDF6mibIe5wgFGuosH1H6iTOpFLCxt7PzZvRy0xJRJ1B/0NXVtRzSNiqZV99YQvyh5F3FLaAgzhGyaZpBZg\
+      QK6QEDN8O945vmSyQCEKffVxJR40NaGseWwpNmN06sNgwZfVMqoC4hTnIdoBIVTqK+2siotTk4SDpalXr4YKQ5x4G/AzfzcyDWl\
+      x3tkAbOEXB1oqPL47qMd9Y29AN4wpOPgWDpWnirpXBHfYM5gWs1IdZTcJNGIP3tiNw5ONADnTM4Ko8jZOswv5EnDTR9DKfeLBQK\
+      P9XUqBa7u7tX4RG5C3KeDX2Q5cnA8la3gTuNx2h/ElmkSZIRGalisTgJ+g+gJOQLgv2243Qjct/x/Af+SVwwg/jBdRLtXTpOQgA\
+      ZJFPfsmXLctns+6TBE/6scoLyuce0LYGMnBD7gSMkethq5pBl4a+8tUue9zZevnkY7eAyPOyXSltGi8VNiF5eWoqSwA8OPtM7le\
+      O6jGiseQHPctDdiv2wnqrAp08kaTtQzIYD/JlCsXiQNIBEL4akjsisjI2NTUDji5QOZSynQ319fWmE8x7U+LdA/+75/veeEK+SZ\
+      h6E+0aID8kLYBaqo00kH4x8VnPPEXQgwlmNb7WgGmRyiZvZxpP9c2zQfYjcAOats1NTb7jF4k6MH+A6WnhDh6VSHU1pvTDNKyp7\
+      Ooic0qkAmbKR8RcKrnscc97oOmMY1oYwSrVpqldpjIHf1MduyGRuQXn1A3E3xh2Z9vbz2MCT6XT6JjRzenqav/aUzVIEDQ/a29t\
+      XArkVYykLvQwQnDCR1b0o1beAo106IBjGg45KPGVIoZWn8sXiMyiD15EZHpM7IOjs5MTEz4HnXUB93KcERgWKMgjMVhn88i0FJ7\
+      bjlHoNOOkwCeqBeh2hbJYB+Yx8ofAKjtxHUA6/4efpEhjVh9YmLKtWyUrnQOcgCw68OmUEwV1w4gBkco2OamcxTAaNOELJdIZgj\
+      46Ofolj+E448zIy9CuR6Pk/byTAgcvc0Di2T6Dfhv+xNuQvXeINzswwS3U7EamoAWQl+vzdgn2yYcWKFa015Fj4p+X2eetRJTiP\
+      5L+ZclNXHKpDZSM8dYhvnJQOJYmu3GONq2lyNiPQjEAzAs0INCOwuBH4B+Tl3nK+fMmhAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 50px;
+    bottom: 10px;
+    display: block;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    width: 50px;
+  }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <input id="q" autofocus />
+  </div>
+  <div class="preview">
+    <img
+      id="identicon"
+      src="https://node-identicon.herokuapp.com/?q="
+      width=250
+      height=250
+    />
+  </div>
+  <a class="github" href="https://github.com/jimenglish81/identicon"></a>
+  <script>
+  const img = document.getElementById('identicon');
+  Rx.Observable.fromEvent(document.getElementById('q'), 'keyup')
+    .subscribe(e =>
+      img.src = img.src.replace(/(q=)(.*)/, `$1${e.target.value}`)
+    );
+  </script>
+</body>
+</html>
