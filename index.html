@@ -3,33 +3,40 @@
 <head>
   <title>Identicon</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Identicon generator">
+  <meta name="theme-color" content="#efefef">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <script src="https://unpkg.com/@reactivex/rxjs@5.0.3/dist/global/Rx.js"></script>
   <style type="text/css">
   body {
     background: #efefef;
+    margin: 0;
   }
-  .header {
+  .preview {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .seed {
     align-items: center;
     display: flex;
     justify-content: center;
     padding: 20px;
   }
-  .header input {
-    background: transparent;
-    border: 1px solid #333;
-    color: #333;
+  .seed input {
+    background: #fff;
+    border: none;
+    color: #777;
+    font-size: 36px;
     outline: none;
     padding: 8px;
     text-align: center;
-    width: 250px;
+    width: 350px;
   }
-  .header input:focus {
+  .seed input:focus {
     outline: none;
-  }
-  .preview {
-    display: flex;
-    justify-content: center;
   }
   .github {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0I\
@@ -77,9 +84,6 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <input id="q" autofocus />
-  </div>
   <div class="preview">
     <img
       id="identicon"
@@ -87,6 +91,9 @@
       width=250
       height=250
     />
+  </div>
+  <div class="seed">
+    <input id="q" autofocus />
   </div>
   <a class="github" href="https://github.com/jimenglish81/identicon"></a>
   <script>
